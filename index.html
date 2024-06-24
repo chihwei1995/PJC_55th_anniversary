@@ -3,47 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PJC_55th_anniversary</title>
-   <script>
-        // Function to get the value of a specific query parameter
-        function getQueryParameter(name) {
+    <title>PJC 55th Anniversary</title>
+    <script>
+        function getQueryParameter(param) {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
+            return urlParams.get(param);
         }
 
-        // Get the values of the query parameters
-        const name = getQueryParameter('name');
-        const chapterCode = getQueryParameter('chapterCode');
-        const language = getQueryParameter('language');
+        function displayMessage() {
+            const name = getQueryParameter('name');
+            const chapterCode = getQueryParameter('chapterCode');
+            const language = getQueryParameter('language');
 
-        // Function to display text based on the parameters
-        function displayText(name, chapterCode, language) {
-            const displayElement = document.getElementById('displayText');
-            let text;
+            let message = '';
 
             switch (language) {
                 case 'en':
-                    text = `Hello ${name} from chapter ${chapterCode}`;
+                    message = `Hello ${name} from ${chapterCode} chapter. Welcome!`;
                     break;
                 case 'jp':
-                    text = `チャプター${chapterCode}の${name}さん、こんにちは`;
+                    message = `こんにちは ${name} さん。 ${chapterCode} 支部からようこそ！`;
                     break;
                 case 'kr':
-                    text = `챕터 ${chapterCode}의 ${name}님, 안녕하세요`;
+                    message = `안녕하세요 ${name} 님. ${chapterCode} 지부에서 오신 것을 환영합니다!`;
                     break;
                 default:
-                    text = `Hello ${name} from chapter ${chapterCode}`;
+                    message = `Hello ${name} from ${chapterCode} chapter. Welcome!`;
             }
 
-            displayElement.textContent = text;
+            document.getElementById('message').innerText = message;
         }
 
-        // Display the text
-        displayText(name, chapterCode, language);
+        window.onload = displayMessage;
     </script>
 </head>
 <body>
-    <h1>PJC_55th_anniversary</h1>
-     <h1 id="displayText">Loading...</h1>
+    <h1 id="message">Loading...</h1>
 </body>
 </html>
