@@ -3,27 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Content Page</title>
-    <script>
-        function getQueryParameter(param) {
+    <title>PJC_55th_anniversary</title>
+   <script>
+        // Function to get the value of a specific query parameter
+        function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
+            return urlParams.get(name);
         }
 
-        function displayText() {
-            const text = getQueryParameter('text');
-            if (text) {
-                document.getElementById('content').textContent = text;
-            } else {
-                document.getElementById('content').textContent = 'No text provided in URL.';
+        // Get the values of the query parameters
+        const name = getQueryParameter('name');
+        const chapterCode = getQueryParameter('chapterCode');
+        const language = getQueryParameter('language');
+
+        // Function to display text based on the parameters
+        function displayText(name, chapterCode, language) {
+            const displayElement = document.getElementById('displayText');
+            let text;
+
+            switch (language) {
+                case 'en':
+                    text = `Hello ${name} from chapter ${chapterCode}`;
+                    break;
+                case 'jp':
+                    text = `チャプター${chapterCode}の${name}さん、こんにちは`;
+                    break;
+                case 'kr':
+                    text = `챕터 ${chapterCode}의 ${name}님, 안녕하세요`;
+                    break;
+                default:
+                    text = `Hello ${name} from chapter ${chapterCode}`;
             }
+
+            displayElement.textContent = text;
         }
 
-        window.onload = displayText;
+        // Display the text
+        displayText(name, chapterCode, language);
     </script>
 </head>
 <body>
-    <h1>Dynamic Content Page</h1>
-    <p id="content">Loading...</p>
+    <h1>PJC_55th_anniversary</h1>
+     <h1 id="displayText">Loading...</h1>
 </body>
 </html>
