@@ -69,15 +69,25 @@
     </style>
 </head>
 <body>
-    <video class="video-background" autoplay loop>
-        <source src="448798063_836174395099246_4769191237352053517_n.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <video class="video-background" id="bgVideo" loop muted>
+    <source src="448798063_836174395099246_4769191237352053517_n.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
     <div class="content">
         <h1 class="typing-animation" id="displayText"></h1>
     </div>
 
     <script>
+
+          document.addEventListener('DOMContentLoaded', function () {
+        const video = document.getElementById('bgVideo');
+
+        // 监听页面加载完成事件，手动播放视频
+        video.play().catch(error => {
+            // 自动播放失败，可以考虑显示一个播放按钮供用户手动触发
+            console.log('自动播放失败:', error);
+        });
+    });
         function getQueryParameter(param) {
             let params = new URLSearchParams(window.location.search);
             return params.get(param);
@@ -91,13 +101,13 @@
             let displayText = '';
 
             if (language === 'zh') {
-                displayText = `你好, 來自${chapterCode}的${name}！/n 歡迎參與半島青年商會55週年。`;
+                displayText = `你好, 來自${chapterCode}的${name}！\n 歡迎參與半島青年商會55週年。`;
             } else if (language === 'en') {
-                displayText = `Hello, ${name} from ${chapterCode}!/n Welcome to the Peninsula Youth Chamber of Commerce 55th Anniversary.`;
+                displayText = `Hello, ${name} from ${chapterCode}!\n Welcome to the Peninsula Youth Chamber of Commerce 55th Anniversary.`;
             } else if (language === 'ja') {
-                displayText = `こんにちは, ${chapterCode}の${name}さん！/n 半島青年商会55周年にようこそ。`;
+                displayText = `こんにちは, ${chapterCode}の${name}さん！\n 半島青年商会55周年にようこそ。`;
             } else if (language === 'ko') {
-                displayText = `안녕하세요, ${chapterCode}의 ${name}님!/n 반도 청년 상공회의소 55주년을 환영합니다.`;
+                displayText = `안녕하세요, ${chapterCode}의 ${name}님!\n 반도 청년 상공회의소 55주년을 환영합니다.`;
             }
 
             document.getElementById('displayText').textContent = displayText;
