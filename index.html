@@ -108,14 +108,14 @@
             let displayText2 = '';
 
             if (language === 'zh') {
-                displayText = `你好, 來自${chapterCode}的${name}！<br />歡迎參與半島青年商會55週年。`;
+                displayText = `你好, 來自${chapterCode}的${name}！\n	歡迎參與半島青年商會55週年。`;
 
             } else if (language === 'en') {
-                displayText = `Hello, ${name} from ${chapterCode}!<br /> Welcome to the Peninsula Youth Chamber of Commerce 55th Anniversary.`;
+                displayText = `Hello, ${name} from ${chapterCode}!\n	Welcome to the Peninsula Youth Chamber of Commerce 55th Anniversary.`;
             } else if (language === 'ja') {
-                displayText = `こんにちは, ${chapterCode}の${name}さん！<br /> 半島青年商会55周年にようこそ。`;
+                displayText = `こんにちは, ${chapterCode}の${name}さん！\n	半島青年商会55周年にようこそ。`;
             } else if (language === 'ko') {
-                displayText = `안녕하세요, ${chapterCode}의 ${name}님! 반도 청년 상공회의소 55주년을 환영합니다.<br />반도 청년 상공회의소 55주년을 환영합니다.`;
+                displayText = `안녕하세요, ${chapterCode}의 ${name}님! 반도 청년 상공회의소 55주년을 환영합니다.\n	반도 청년 상공회의소 55주년을 환영합니다.`;
             }
 
             document.getElementById('displayText').textContent = displayText;
