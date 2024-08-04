@@ -4,6 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PJC 55th</title>
+    <script>
+
+        var currentLanguage = 'zh';
+
+
+        
+        function switchLanguage(lang) {
+                if (!lang) {
+                    lang = currentLanguage === 'zh' ? 'en' : 'zh';
+                }
+                currentLanguage = lang;
+        
+                var mainImage = document.getElementById('main-image');
+                var livephotoImg = document.getElementById('livephoto-img');
+                var ebookImg = document.getElementById('ebook-img');
+                var rundownImg = document.getElementById('rundown-img');
+                var eventsImg = document.getElementById('events-img');
+                var rundownLink = document.getElementById('rundown-link');
+
+                
+                if (lang === 'zh') {
+                    mainImage.src = './Group 1.png'; // Replace with the path to your Chinese image
+                    livephotoImg.src = './buttons/photo-chi.png';
+                    ebookImg.src = './buttons/ebook-chi.png';
+                    rundownImg.src = './buttons/program-chi.png';
+                    eventsImg.src = './buttons/pract-chi.png';
+                    rundownLink.href = './rundown.html?lang=zh';
+                } else if (lang === 'en') {
+                    mainImage.src = './Group 1 (1).png'; // Replace with the path to your English image
+                    livephotoImg.src = './buttons/photo-eng.png';
+                    ebookImg.src = './buttons/ebook-eng.png';
+                    rundownImg.src = './buttons/program-eng.png';
+                    eventsImg.src = './buttons/pract-eng.png';
+                    rundownLink.href = './rundown.html?lang=en';
+                }
+            }
+
+            function getQueryParameter(param) {
+            let params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+                   
+                    const language = getQueryParameter('lang') || 'zh';
+        
+                    switchLanguage(language);
+                    var rundownLink = document.getElementById('rundown-link');
+
+                    rundownLink.href='./rundown.html?lang='+language;
+        
+        });
+        
+        
+           
+        </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -77,6 +133,7 @@
             margin: 10px;
         }
 
+  
         .footer-image {
     position: fixed;
     bottom: 0;
@@ -154,49 +211,20 @@
     <img id="main-image" src="./Group 1.png" alt="半島夢非凡">
 </div>
 
-    <div class="language-select">
-        <h2>請選擇語言：</h2>
-        <h2>Please select language:</h2>
-        <a href="./home.html?lang=zh"><img src="./buttons/chinese.png" alt="中文" onclick="switchLanguage('zh')"></a>
-        <a href="./home.html?lang=en"><img src="./buttons/english.png" alt="English" onclick="switchLanguage('en')"></a>
-    </div>
+<div class="language-select">
+    <a id="livephoto-link" href="https://livephoto.hkpjc55thanniversary.online/" target="_blank"><img id="livephoto-img" src="./buttons/photo-chi.png" alt="livephoto"></a>
+    <a id="ebook-link" href="https://ebook.hkpjc55thanniversary.online" target="_blank"><img id="ebook-img" src="./buttons/ebook-chi.png" alt="ebook"></a>
+    <a id="rundown-link" href="./rundown.html?lang=zh" target="__blank"><img id="rundown-img" src="./buttons/program-chi.png" alt="rundown"></a>
+    <a id="events-link" href="https://events.hkpjc55thanniversary.online" target="_blank"><img id="events-img" src="./buttons/pract-chi.png" alt="events"></a>
+</div>
+
+  
 </div>
 
 <div class="footer-image"></div>
 
 
 </body>
-<script>
-        var currentLanguage = 'zh';
 
-    function switchLanguage(lang) {
-            if (!lang) {
-                lang = currentLanguage === 'zh' ? 'en' : 'zh';
-            }
-            currentLanguage = lang;
-    
-            var mainImage = document.getElementById('main-image');
-         
-            if (lang === 'zh') {
-                mainImage.src = './Group 1.png'; // Replace with the path to your Chinese image
-               
-            } else if (lang === 'en') {
-                mainImage.src = './Group 1 (1).png'; // Replace with the path to your English image
-                
-            }
-        }
-        function getQueryParameter(param) {
-            let params = new URLSearchParams(window.location.search);
-            return params.get(param);
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-           
-           const language = getQueryParameter('lang') || 'zh';
-
-           switchLanguage(language);
-
-});
-</script>
 
 </html>
