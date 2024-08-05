@@ -20,7 +20,7 @@
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            /*align-items: center;*/
             z-index: 1000;
             box-sizing: border-box;
         }
@@ -35,6 +35,9 @@
         .navbar .logo-container-R {
             display: flex;
             align-items: right;
+            top:0; right:0; position: absolute; cursor:
+pointer;
+
         }
         .navbar h1 {
             margin: 0;
@@ -60,7 +63,7 @@
         }
         .image-placeholder2 {
             width: 100%;
-            height: 100px;
+            height: 65px;
             display: flex;
             /* align-items: center;*/
             justify-content: center;
@@ -79,7 +82,7 @@
 
         .footer-image {
     position: fixed;
-    bottom: 0;
+    bottom:  -25%;
     left: 0;
     width: 100%;
     height: 55%; /* Adjust height as needed */
@@ -142,7 +145,7 @@
     </div>
     <div class="logo-container-R">
       
-        <h4 onclick="switchLanguage()">中文/En</h4>
+        <h4 onclick="switchLanguage()">中文/En&nbsp;&nbsp;&nbsp;&nbsp;</h4>
     </div>
 </div>
 

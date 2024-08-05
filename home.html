@@ -22,6 +22,8 @@
                 var rundownImg = document.getElementById('rundown-img');
                 var eventsImg = document.getElementById('events-img');
                 var rundownLink = document.getElementById('rundown-link');
+                var regdrawImg = document.getElementById('regdraw-img');
+
 
                 
                 if (lang === 'zh') {
@@ -31,6 +33,8 @@
                     rundownImg.src = './buttons/program-chi.png';
                     eventsImg.src = './buttons/pract-chi.png';
                     rundownLink.href = './rundown.html?lang=zh';
+                    regdrawImg.href ='./buttons/regdraw-chi.png';
+
                 } else if (lang === 'en') {
                     mainImage.src = './Group 1 (1).png'; // Replace with the path to your English image
                     livephotoImg.src = './buttons/photo-eng.png';
@@ -38,6 +42,8 @@
                     rundownImg.src = './buttons/program-eng.png';
                     eventsImg.src = './buttons/pract-eng.png';
                     rundownLink.href = './rundown.html?lang=en';
+                    regdrawImg.href ='./buttons/regdraw-eng.png';
+
                 }
             }
 
@@ -76,7 +82,7 @@
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+           /*align-items: center;*/
             z-index: 1000;
             box-sizing: border-box;
         }
@@ -91,6 +97,8 @@
         .navbar .logo-container-R {
             display: flex;
             align-items: right;
+            top:0; right:0; position: absolute; cursor:
+pointer;
         }
         .navbar h1 {
             margin: 0;
@@ -116,7 +124,7 @@
         }
         .image-placeholder2 {
             width: 100%;
-            height: 100px;
+            height: 65px;
             display: flex;
             /* align-items: center;*/
             justify-content: center;
@@ -128,7 +136,7 @@
         }
         .language-select img {
             cursor: pointer;
-            width: 200px; /* Adjusted width */
+            width: 280px; /* Adjusted width */
             height: auto;
             margin: 10px;
         }
@@ -136,7 +144,7 @@
   
         .footer-image {
     position: fixed;
-    bottom: 0;
+    bottom:  -25%;
     left: 0;
     width: 100%;
     height: 55%; /* Adjust height as needed */
@@ -170,7 +178,7 @@
             }
             .image-placeholder {
             width: 100%;
-            height: 300px;
+            height: 250px;
             display: flex;
             /* align-items: center;*/
             justify-content: center;
@@ -199,7 +207,7 @@
     </div>
     <div class="logo-container-R">
       
-        <h4 onclick="switchLanguage()">中文/En</h4>
+        <h4 onclick="switchLanguage()">中文/En&nbsp;&nbsp;&nbsp;&nbsp;</h4>
     </div>
 </div>
 
@@ -212,10 +220,12 @@
 </div>
 
 <div class="language-select">
-    <a id="livephoto-link" href="https://livephoto.hkpjc55thanniversary.online/" target="_blank"><img id="livephoto-img" src="./buttons/photo-chi.png" alt="livephoto"></a>
-    <a id="ebook-link" href="https://ebook.hkpjc55thanniversary.online" target="_blank"><img id="ebook-img" src="./buttons/ebook-chi.png" alt="ebook"></a>
-    <a id="rundown-link" href="./rundown.html?lang=zh" target="__blank"><img id="rundown-img" src="./buttons/program-chi.png" alt="rundown"></a>
-    <a id="events-link" href="https://events.hkpjc55thanniversary.online" target="_blank"><img id="events-img" src="./buttons/pract-chi.png" alt="events"></a>
+    <a id="livephoto-link" href="http://livephoto.hkpjc55thanniversary.online/" target="_blank"><img id="livephoto-img" src="./buttons/photo-chi.png" alt="livephoto"></a>
+    <a id="ebook-link" href="http://ebook.hkpjc55thanniversary.online" target="_blank"><img id="ebook-img" src="./buttons/ebook-chi.png" alt="ebook"></a>
+    <a id="rundown-link" href="./rundown.html?lang=zh" ><img id="rundown-img" src="./buttons/program-chi.png" alt="rundown"></a>
+    <a id="events-link" href="http://events.hkpjc55thanniversary.online" target="_blank"><img id="events-img" src="./buttons/pract-chi.png" alt="events"></a>
+    <a id="regdraw-link" href="http://luckydraw.hkpjc55thanniversary.online" target="_blank"><img id="regdraw-img" src="./buttons/regdraw-chi.png" alt="regdraw"></a>
+
 </div>
 
   
